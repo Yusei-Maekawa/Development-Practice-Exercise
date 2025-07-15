@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュースリーダー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📰 ニュースリーダー</h1>
+            <p>最新ニュースをお届けします</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="キーワードを入力してください...">
+                <button onclick="searchNews()">検索</button>
+            </div>
+
+            <div class="category-container">
+                <label for="category">カテゴリ:</label>
+                <select id="category">
+                    <option value="">すべて</option>
+                    <option value="business">ビジネス</option>
+                    <option value="entertainment">エンターテイメント</option>
+                    <option value="general">一般</option>
+                    <option value="health">健康</option>
+                    <option value="science">科学</option>
+                    <option value="sports">スポーツ</option>
+                    <option value="technology">テクノロジー</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="news-container">
+            <div id="loading" class="loading">Loading...</div>
+            <div id="newsResults" class="news-results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
