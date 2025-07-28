@@ -170,3 +170,32 @@ async function fetchFromNewsAPI() {
     }
 }
 */
+
+// 通貨換算APIを使った換算関数
+async function convertCurrency() {
+    const amount = document.getElementById('amountInput').value;
+    const from = document.getElementById('fromCurrency').value;
+    const to = document.getElementById('toCurrency').value;
+    const resultDiv = document.getElementById('currencyResult');
+
+    if (!amount || isNaN(amount) || amount <= 0) {
+        resultDiv.textContent = '有効な金額を入力してください。';
+        return;
+    }
+
+    resultDiv.textContent = '換算中...';
+    try {
+        // 無料API例: exchangerate.host
+        const url = `https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log('Currency API response:', data);
+        if (data.result !== undefined) {
+            resultDiv.textContent = `${amount} ${from} = ${data.result.toFixed(2)} ${to}`;
+        } else {
+            resultDiv.textContent = '換算に失敗しました。';
+        }
+    } catch (e) {
+        resultDiv.textContent = 'APIエラーが発生しました。';
+    }
+}

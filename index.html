@@ -40,6 +40,29 @@
             <div id="loading" class="loading">Loading...</div>
             <div id="newsResults" class="news-results"></div>
         </div>
+        <div class="currency-section">
+            <h2>通貨換算</h2>
+            <div class="currency-container">
+                <input type="number" id="amountInput" placeholder="金額を入力してください...">
+                <select id="fromCurrency">
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                </select>
+                <span>→</span>
+                <select id="toCurrency">
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                </select>
+                <button onclick="convertCurrency()">換算</button>
+            </div>
+            <div id="currencyResult" class="currency-result"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
