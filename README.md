@@ -69,6 +69,21 @@
 ユーザーがテキストを入力。
 QRコード画像を生成して表示。
 
+----- クラス: QrCodeCliApp -----
+【クラス説明】QR Server APIを利用し、コマンドラインでテキストやURLからQRコード画像を生成・保存する。
+
+【関数名】コンストラクタ
+【リファレンス】QrCodeCliApp()
+【説明】CLIアプリの初期化を行う。
+
+【関数名】generateQRCode
+【リファレンス】void generateQRCode(text: String, filename: String)
+【説明】入力テキストからQRコード画像を生成し、指定ファイル名で保存する。
+
+【関数名】ユーザー入力受付
+【リファレンス】void promptUser()
+【説明】QRコード化したいテキストやURLをユーザーに尋ね、generateQRCode()を呼び出す。
+-----
 
 
 4.DeepL
