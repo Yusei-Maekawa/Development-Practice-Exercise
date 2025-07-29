@@ -19,6 +19,10 @@
 【関数名】ジョークを取得して表示
 【リファレンス】void fetchAndShowJoke()
 【説明】JokeAPIからジョークを取得し、内容をコンソールに表示する。
+// 使用WebAPI: JokeAPI (https://v2.jokeapi.dev/)
+// 呼び出し方: GETリクエストで https://v2.jokeapi.dev/joke/Any?lang=en など
+// パラメータ: category=ジョークカテゴリ（Any, Programming, etc）、lang=言語（en, de, etc）
+// 得られるデータ形式: JSON形式。type（single/twopart）、joke（本文）、setup/delivery（twopartの場合）などが含まれる。
 
 【関数名】ユーザー入力受付
 【リファレンス】void promptUser()
@@ -41,6 +45,10 @@
 
 【関数名】fetchNameInfo
 【意味】指定した名前から年齢・性別をAPIで推定し、結果をNameInfoクラスで返す。非同期処理。
+// 使用WebAPI: agify.io（年齢推定）, genderize.io（性別推定）
+// 呼び出し方: GETリクエストで https://api.agify.io?name=名前, https://api.genderize.io?name=名前
+// パラメータ: name=推定したい名前（例: John）
+// 得られるデータ形式: JSON形式。agify.ioは { name, age, count }、genderize.ioは { name, gender, probability, count } で返却される。
 -----
 ----- クラス: NameInfo -----
 【クラス説明】名前・年齢・性別・確信度などの推定結果を保持するデータクラス。
@@ -79,6 +87,10 @@ QRコード画像を生成して表示。
 【関数名】generateQRCode
 【リファレンス】void generateQRCode(text: String, filename: String)
 【説明】入力テキストからQRコード画像を生成し、指定ファイル名で保存する。
+// 使用WebAPI: QR Server API (https://goqr.me/api/)
+// 呼び出し方: GETリクエストで https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=テキスト
+// パラメータ: size=画像サイズ（例:200x200）、data=QRコード化したい文字列
+// 得られるデータ形式: レスポンスはPNG画像バイナリ（画像データとして保存可能）
 
 【関数名】ユーザー入力受付
 【リファレンス】void promptUser()
